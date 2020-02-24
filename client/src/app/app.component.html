@@ -1,0 +1,20 @@
+<div class="aui-item">
+    <h1>We use angular now!</h1>
+</div>
+<div class="aui-item">
+    <h2>Angular version: {{angularVersion}}</h2>
+</div>
+<form class="aui">
+  <div class="field-group">
+    <label for="counter">Counter
+      <span class="aui-icon icon-required">(required)</span></label>
+    <input class="text medium-field" type="number" id="counter" name="counter" [(ngModel)]="counter">
+    <div class="description">A simple counter</div>
+  </div>
+  <div class="buttons-container">
+    <div class="buttons">
+      <button type="button" class="aui-button" (click)="inc()">Increment</button>
+      <button type="button" class="aui-button" (click)="dec()">Decrement</button>
+    </div>
+  </div>
+</form>

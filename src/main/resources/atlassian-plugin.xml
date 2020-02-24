@@ -1,0 +1,33 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <resource type="i18n" name="i18n" location="angularInJira"/>
+
+    <web-resource key="angularInJira-client" name="angularInJira Web Resources">
+        <resource type="download" name="runtime-es2015.js" location="client/runtime-es2015.js" />
+        <resource type="download" name="runtime-es5.js" location="client/runtime-es5.js" />
+        <resource type="download" name="polyfills-es5.js" location="client/polyfills-es5.js" />
+        <resource type="download" name="polyfills-es2015.js" location="client/polyfills-es2015.js" />
+        <resource type="download" name="main-es2015.js" location="client/main-es2015.js" />
+        <resource type="download" name="main-es5.js" location="client/main-es5.js" />
+        <resource type="download" name="styles.css" location="client/styles.css" />
+        <context>angularInJira-client</context>
+    </web-resource>
+
+    <web-item key="project-sidebar-item" section="jira.project.sidebar.plugins.navigation" weight="300">
+        <label>Angular in Jira</label>
+        <link>/projects/$pathEncodedProjectKey?selectedItem=com.scitotec.angularInJiraEntry</link>
+        <param name="iconClass" value="aui-icon-large aui-iconfont-warning"/>
+    </web-item>
+
+    <web-panel key="angular-in-jira-entry" location="com.scitotec.angularInJiraEntry">
+        <resource name="view" type="velocity" location="index.vm"/>
+    </web-panel>
+
+</atlassian-plugin>
